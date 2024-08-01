@@ -1,0 +1,31 @@
+.lists {
+    display: flex;
+    gap: 12px;
+    list-style: none;
+    padding: 0;
+    overflow: scroll;
+}
+
+.lists::-webkit-scrollbar {
+    display: none;
+}
+
+.lists__item {
+    border: 1px solid hsla(0, 0%, 89%, 1);
+    border-radius: 8px;
+    font-family: "Roboto", Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 14.06px;
+    color: hsla(0, 0%, 49%, 1);
+    padding: 6px 10px 6px 10px;
+    white-space: nowrap;
+    transition: all 0.3s linear;
+}
+
+.lists__item_selected {
+    background-color: hsla(215, 28%, 17%, 1);
+    border: 1px solid hsla(215, 28%, 17%, 1);
+    font-weight: 700;
+    color: #fff;
+}

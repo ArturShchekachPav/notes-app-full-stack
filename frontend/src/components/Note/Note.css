@@ -1,0 +1,45 @@
+.note {
+    padding: 18px 10px 18px 10px;
+    background-color: rgba(255, 216, 244, 1);
+    border-radius: 16px;
+    font-family: "Roboto", Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 14.06px;
+    color: rgba(19, 19, 19, 1);
+    hyphens: auto;
+}
+
+.note_color_blue {
+    background-color: #D9E8FC;
+}
+
+.note_color_pink {
+    background-color: #FFD8F4;
+}
+
+.note_color_yellow {
+    background-color: #FDE99D;
+}
+
+.note_color_green {
+    background-color: #B0E9CA;
+}
+
+.note_color_brown {
+    background-color: #FFEADD;
+}
+
+.note__title {
+    font-family: "Roboto", Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 16.41px;
+    color: rgba(19, 19, 19, 1);
+    margin: 0 0 9px 0;
+}
+
+.note>div>ul, .note>div>ol {
+    padding: 0;
+    list-style-position: inside;
+}

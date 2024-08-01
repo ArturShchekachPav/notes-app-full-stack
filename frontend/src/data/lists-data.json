@@ -1,0 +1,22 @@
+[
+  {
+    "id": "1",
+    "title": "Important",
+    "owner": "1"
+  },
+  {
+    "id": "2",
+    "title": "Lecture notes",
+    "owner": "1"
+  },
+  {
+    "id": "3",
+    "title": "To-do lists",
+    "owner": "1"
+  },
+  {
+    "id": "4",
+    "title": "Shopping",
+    "owner": "1"
+  }
+]

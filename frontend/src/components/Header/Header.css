@@ -1,0 +1,20 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header__logo {
+    background-image: url(../../images/logo.svg);
+    max-width: 91px;
+    width: 100%;
+    aspect-ratio: 91/29;
+}
+
+.header__profile-link {
+    color: #000;
+    font-family: "Roboto", Arial, Helvetica, sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    text-decoration: none;
+}
