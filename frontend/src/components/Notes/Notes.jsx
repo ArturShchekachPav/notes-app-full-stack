@@ -5,7 +5,7 @@ import Lists from "../Lists/Lists";
 import Masonry from "react-masonry-css";
 import {useEffect, useState} from "react";
 
-function Notes({notes, lists}) {
+function Notes({notes, lists, onEditNotePopupOpen}) {
     const [selectedList, setSelectedList] = useState({title: null, id: null});
     const [foundNotes, setFoundNotes] = useState(notes);
     const [searchText, setSearchText] = useState('');
@@ -17,7 +17,7 @@ function Notes({notes, lists}) {
         if(selectedList.id === null) {
             filteredNotes = notes;
         } else {
-            filteredNotes = notes.filter(note => note.list === selectedList.id);
+            filteredNotes = notes.filter(note => note.list === selectedList.title);
         }
 
         if(searchText !== "") {
@@ -35,9 +35,9 @@ function Notes({notes, lists}) {
                 breakpointCols = {2}
                 className = "notes__grid"
                 columnClassName = "notes__grid_column" >
-                {foundNotes.map(note => <Note key={note.id} note={note} /> )}
+                {foundNotes.map(note => <Note key={note.id} note={note} onEditNotePopupOpen={onEditNotePopupOpen}/> )}
             < / Masonry >
-            <button className="notes__add-button"></button>
+            <button className="notes__add-button" onClick={() => onEditNotePopupOpen({title: 'Untitled', list: 'All', color: 'blue', content: '<div>Enter the text</div>'})}></button>
         </section>
     );
 }

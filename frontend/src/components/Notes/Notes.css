@@ -1,5 +1,7 @@
 .notes {
     position: relative;
+    box-sizing: border-box;
+    margin: 0 23px;
 }
 
 .notes__list {

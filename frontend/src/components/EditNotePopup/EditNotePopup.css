@@ -1,0 +1,90 @@
+.edit-note-popup {
+    position: absolute;
+    background-color: #24416530;
+    height: 100vh;
+    width: 100%;
+    top: 0;
+    left: 0;
+    padding: 64px 23px 32px 23px;
+    box-sizing: border-box;
+    display: flex;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0.5s, opacity 0.5s linear;
+}
+
+.edit-note-popup_open {
+    visibility: visible;
+    opacity: 1;
+}
+
+.edit-note-popup__form {
+    box-shadow: 0px 4px 94px 0px #0000001A;
+    border-radius: 16px;
+    background-color: #fff;
+    padding: 31px 28px 31px 28px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.edit-note-popup__settings {
+    border: none;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.edit-note-popup__button-back {
+    background-color: transparent;
+    background-image: url(../../images/arrow-left.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    border: none;
+    padding: 0;
+    height: 14px;
+    width: 14px;
+    background-position: center center;
+}
+
+.edit-note-popup__button-delete {
+    background-color: transparent;
+    background-image: url(../../images/delete-icon.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    border: none;
+    padding: 0;
+    height: 18px;
+    width: 18px;
+    background-position: center center;
+}
+
+.edit-note-popup__button-save {
+    background-color: transparent;
+    background-image: url(../../images/save-icon.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 18px;
+    width: 18px;
+    border: none;
+    padding: 0;
+    background-position: center center;
+}
+
+.edit-note-popup__input-title {
+    width: 100%;
+    margin: 8px 0 6px 0;
+    border: none;
+    font-family: 'Poppins', Arial, Helvetica, sans-serif;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 36px;
+    color: #181818;
+    box-sizing: border-box;
+}
+
+.edit-note-popup__input-title:focus {
+    outline: none;
+}

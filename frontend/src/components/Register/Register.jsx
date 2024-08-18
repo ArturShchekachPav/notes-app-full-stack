@@ -2,16 +2,17 @@
 //     Link,
 //     useNavigate
 // } from 'react-router-dom';
+// import './Register.css';
 // import ApiError from '../ApiError/ApiError';
 // import {useForm} from 'react-hook-form';
-// import mainApi from '../../utils/MainApi';
 // import {useState} from 'react';
+// import mainApi from '../../utils/MainApi';
 //
-// function LogIn({
-//                    getProfileInfo,
-//                    isLoading,
-//                    setIsLoading
-//                }) {
+// function Register({
+//                       isLoading,
+//                       setIsLoading,
+//                       getProfileInfo
+//                   }) {
 //     const [apiError, setApiError] = useState({
 //         message: '',
 //         show: false
@@ -31,19 +32,26 @@
 //     } = useForm({
 //         mode: 'onChange',
 //         defaultValues: {
+//             name: '',
 //             email: '',
 //             password: ''
 //         }
 //     });
 //
-//     function handleAuthorize({
-//                                  email,
-//                                  password
-//                              }) {
+//     function handleRegister({
+//                                 name,
+//                                 email,
+//                                 password
+//                             }) {
 //         setIsLoading(true);
-//         return mainApi.login(email,
+//
+//         return mainApi.register(name,
+//             email,
 //             password
 //         )
+//             .then(() => mainApi.login(email,
+//                 password
+//             ))
 //             .then(() => getProfileInfo())
 //             .then(() => {
 //                 navigate('/movies',
@@ -71,16 +79,46 @@
 //                     className="register__logo hover hover_type_link"
 //                     to="/"
 //                 ></Link>
-//                 <h1 className="register__greeting">Рады видеть!</h1>
+//                 <h1 className="register__greeting">Добро пожаловать!</h1>
 //             </header>
 //             <main className="register__main">
 //                 <form
 //                     className="register__form"
-//                     name="login"
-//                     onSubmit={handleSubmit(handleAuthorize)}
+//                     name="register"
+//                     onSubmit={handleSubmit(handleRegister)}
 //                     noValidate
 //                 >
 //                     <fieldset className="register__fieldset">
+//                         <label
+//                             className="register__label"
+//                         >
+//                             Имя
+//                             <input
+//                                 type="text"
+//                                 className={`register__input ${errors?.name && 'register__input_error'}`}
+//                                 minLength="2"
+//                                 maxLength="30"
+//                                 placeholder="Имя"
+//                                 pattern="^[а-яА-Яa-zA-Z\s\-]+$"
+//                                 {...register('name',
+//                                     {
+//                                         required: 'Это обязательное поле',
+//                                         minLength: {
+//                                             value: 2,
+//                                             message: 'Значение должно быть длиннее 2-х символов'
+//                                         },
+//                                         maxLength: 30,
+//                                         pattern: {
+//                                             value: /^[а-яА-Яa-zA-Z\s\-]+$/,
+//                                             message: 'Введите корректное имя'
+//                                         }
+//                                     }
+//                                 )}
+//                                 id="name-register"
+//                                 disabled={isLoading}
+//                             />
+//                             {errors?.name && <span className="register__error">{errors?.name?.message}</span>}
+//                         </label>
 //                         <label
 //                             className="register__label"
 //                         >
@@ -89,6 +127,7 @@
 //                                 type="email"
 //                                 className={`register__input ${errors?.email && 'register__input_error'}`}
 //                                 placeholder="Email"
+//                                 pattern="\S+@\S+\.\S+"
 //                                 {...register('email',
 //                                     {
 //                                         required: 'Это обязательное поле',
@@ -130,18 +169,18 @@
 //                             className="register__button hover hover_type_button"
 //                             disabled={!isDirty || !isValid || isLoading}
 //                         >{isLoading ?
-//                             'Авторизация...' :
-//                             'Войти'}
+//                             'Регистрация...' :
+//                             'Зарегистрироваться'}
 //                         </button>
 //                     </div>
 //                 </form>
-//                 <p className="register__text">Еще не зарегистрированы? <Link
-//                     to="/sing-up"
+//                 <p className="register__text">Уже зарегистрированы? <Link
+//                     to="/sing-in"
 //                     className="register__link hover hover_type_link"
-//                 >Регистрация</Link></p>
+//                 >Войти</Link></p>
 //             </main>
 //         </div>
 //     );
 // }
 //
-// export default LogIn;
+// export default Register;

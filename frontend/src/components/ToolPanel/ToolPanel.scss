@@ -1,0 +1,69 @@
+.tool-panel {
+  display: flex;
+  justify-content: space-between;
+  gap: 5px;
+  margin-bottom: 15px;
+  align-items: center;
+
+  &__item {
+    border: none;
+    padding: 0;
+    opacity: 0.5;
+    height: 15px;
+    transition: all 0.5s;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    &_type {
+      &_h1 {
+        background-image: url(../../images/h1-icon.svg);
+        aspect-ratio: 25/18;
+      }
+
+      &_h2 {
+        background-image: url(../../images/h2-icon.svg);
+        aspect-ratio: 30/18;
+      }
+
+      &_BOLD {
+        background-image: url(../../images/bold-icon.svg);
+        aspect-ratio:13/16;
+      }
+
+      &_ACCENT {
+        background-image: url(../../images/accent-icon.svg);
+        aspect-ratio:15.56/18.11;
+      }
+
+      &_UNDERLINE {
+        background-image: url(../../images/underline-icon.svg);
+        aspect-ratio:16/17;
+      }
+
+      &_ITALIC {
+        background-image: url(../../images/italic-icon.svg);
+        aspect-ratio:14/16;
+      }
+
+      &_list {
+        background-image: url(../../images/marlked-list-icon.svg);
+        aspect-ratio:18/14;
+      }
+
+      &_order-list {
+        background-image: url(../../images/numbered-list-icon.svg);
+        aspect-ratio:18/14.95;
+      }
+
+      &_link {
+        background-image: url(../../images/link-icon.svg);
+        aspect-ratio:18/18;
+      }
+    }
+
+    &_active {
+      opacity: 1;
+    }
+  }
+}

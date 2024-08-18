@@ -1,0 +1,27 @@
+[
+  {
+    "id": "1",
+    "title": "blue",
+    "hex": "#D9E8FC"
+  },
+  {
+    "id": "2",
+    "title": "red",
+    "hex": "#FFD8F4"
+  },
+  {
+    "id": "3",
+    "title": "green",
+    "hex": "#B0E9CA"
+  },
+  {
+    "id": "4",
+    "title": "yellow",
+    "hex": "#FDE99D"
+  },
+  {
+    "id": "5",
+    "title": "brown",
+    "hex": "#FFEADD"
+  }
+]

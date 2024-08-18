@@ -4,6 +4,30 @@
     list-style: none;
     padding: 0;
     overflow: scroll;
+    align-items: center;
+}
+
+.lists__add-button {
+    min-width: 28px;
+    height: 28px;
+    background-color: rgba(31, 41, 55, 1);
+    border-radius: 50%;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.lists__add-button::before {
+    content: "";
+    background-image: url(../../images/plus-icon.svg);
+    display: block;
+    margin: auto;
+    width: 13px;
+    height: 13px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center center;
 }
 
 .lists::-webkit-scrollbar {

@@ -2,6 +2,8 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    box-sizing: border-box;
+    margin: 23px 23px 0 23px;
 }
 
 .header__logo {

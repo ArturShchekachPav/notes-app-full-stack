@@ -3,7 +3,7 @@
     "id": "1",
     "title": "Product Meeting",
     "content": "<ol><li>Review of Previous Action</li><li>Items Product Development</li><li>Update User Feedback and Customer Insights</li><li>Competitive Analysis</li><li>Roadmap Discussion</li></ol>",
-    "list": "1",
+    "list": "Important",
     "owner": "1",
     "color": "blue"
   },
@@ -11,7 +11,7 @@
     "id": "2",
     "title": "To-do list",
     "content": "<ol><li>Reply to emails</li><li>Prepare presentation slides for the marketing meeting</li><li>Conduct research on competitor products</li><li>Schedule and plan customer interviews</li><li>Take a break and recharge</li></ol>",
-    "list": "3",
+    "list": "To-do lists",
     "owner": "1",
     "color": "red"
   },
@@ -19,7 +19,7 @@
     "id": "3",
     "title": "Shopping list",
     "content": "<ol><li>Rice</li><li>Pasta</li><li>Cereal</li><li>Yogurt</li><li>Cheese</li><li>Butter</li></ol>",
-    "list": "4",
+    "list": "Shopping",
     "owner": "1",
     "color": "yellow"
   },
@@ -27,7 +27,7 @@
     "id": "4",
     "title": "Product Meeting",
     "content": "<ol><li>Review of Previous Action</li><li>Items Product Development</li><li>Update User Feedback and Customer Insights</li><li>Competitive Analysis</li><li>Roadmap Discussion</li></ol>",
-    "list": "1",
+    "list": "Important",
     "owner": "1",
     "color": "green"
   },
@@ -35,7 +35,7 @@
     "id": "5",
     "title": "Notes",
     "content": "<ul><li>Share insights and findings from recent competitive analysis</li></ul>",
-    "list": "2",
+    "list": "Lecture notes",
     "owner": "1",
     "color": "brown"
   }
