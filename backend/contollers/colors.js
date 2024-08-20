@@ -1,1 +1,1 @@
-export const getColors = () => {};
+export const getColors = (req, res, next) => {};

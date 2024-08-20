@@ -3,6 +3,6 @@ const {getLists, createList, deleteList} = require('../contollers/lists');
 
 router.get('/', getLists);
 router.post('/', createList);
-router.delete('/', deleteList);
+router.delete('/:listId', deleteList);
 
 module.exports = router;

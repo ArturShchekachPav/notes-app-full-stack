@@ -1,7 +1,7 @@
-export const createNote = () => {};
+export const createNote = (req, res, next) => {};
 
-export const deleteNote = () => {};
+export const deleteNote = (req, res, next) => {};
 
-export const updateNote = () => {};
+export const updateNote = (req, res, next) => {};
 
-export const getNotes = () => {};
+export const getNotes = (req, res, next) => {};

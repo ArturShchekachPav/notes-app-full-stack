@@ -3,7 +3,7 @@ const {updateNote, createNote, deleteNote, getNotes} = require('../contollers/no
 
 router.get('/', getNotes);
 router.post('/', createNote);
-router.delete('/', deleteNote);
-router.put('/', updateNote);
+router.delete('/:noteId', deleteNote);
+router.patch('/:noteId', updateNote);
 
 module.exports = router;
