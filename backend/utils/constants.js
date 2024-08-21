@@ -10,6 +10,8 @@ const dublicateEmailErrorMessage = 'Пользователь с таким email
 const registerErrorMessage = 'При регистрации пользователя произошла ошибка';
 const incorrectRequestErrorMessage = 'Переданы некорректные данные';
 const userNotFoundMessage = 'Запрашиваемый пользователь не найдет';
+const listNotFoundErrorMessage = 'Запрашиваемый лист не найден';
+const noteNotFoundErrorMessage = 'Запрашиваемая записка не найдена';
 const noAccessErrorMessage = 'У вас нет прав на эту операцию';
 const updateUserErrorMessage = 'При обновлении пользователя произошла ошибка';
 
@@ -27,4 +29,6 @@ module.exports = {
   userNotFoundMessage,
   noAccessErrorMessage,
   updateUserErrorMessage,
+  listNotFoundErrorMessage,
+  noteNotFoundErrorMessage,
 }

@@ -1,9 +1,11 @@
-export const getUsers = (req, res, next) => {};
+const getUsers = (req, res, next) => {};
 
-export const getUserById = (req, res, next) => {};
+const getUserById = (req, res, next) => {};
 
-export const createUser = (req, res, next) => {};
+const createUser = (req, res, next) => {};
 
-export const login = (req, res, next) => {};
+const login = (req, res, next) => {};
 
-export const updateUserData = (req, res, next) => {};
+const updateUserData = (req, res, next) => {};
+
+module.exports = { getUsers, getUserById, createUser, login, updateUserData };
