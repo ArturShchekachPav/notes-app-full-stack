@@ -1,4 +1,4 @@
-import { dbConnection } from "../utils/config";
+const { dbConnection } = require("../utils/config");
 
 const getColors = (req, res, next) => {
     return dbConnection.query('SELECT * FROM colors')
@@ -6,4 +6,16 @@ const getColors = (req, res, next) => {
     .catch(next);
 };
 
-module.exports = { getColors };
+const deleteColorById = (req, res, next) => {
+
+};
+
+const updateColor = (req, res, next) => {
+
+};
+
+const createColor = (req, res, next) => {
+
+}
+
+module.exports = { getColors, deleteColorById, updateColor, createColor};

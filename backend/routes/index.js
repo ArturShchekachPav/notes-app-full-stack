@@ -14,10 +14,10 @@ router.get('/signout', auth, (req, res) => {
     res.clearCookie('jwt').send({ message: 'Выход' });
   });
 
-router.use('/colors', colorRoutes);
-router.use('/users', userRoutes);
-router.use('/lists', listRoutes);
-router.use('/notes', noteRoutes);
+router.use('/colors', auth, colorRoutes);
+router.use('/users', auth, userRoutes);
+router.use('/lists', auth, listRoutes);
+router.use('/notes', auth, noteRoutes);
 
 router.use('*', (req, res, next) => next(new NotFoundError('Некорректный путь запроса')));
 
