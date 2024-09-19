@@ -14,6 +14,7 @@ const listNotFoundErrorMessage = 'Запрашиваемый лист не на�
 const noteNotFoundErrorMessage = 'Запрашиваемая записка не найдена';
 const noAccessErrorMessage = 'У вас нет прав на эту операцию';
 const updateUserErrorMessage = 'При обновлении пользователя произошла ошибка';
+const colorNotFoundErrorMessage = 'Запрашиваемый цвет не найден';
 
 module.exports = {
   CREATED_CODE,
@@ -31,4 +32,5 @@ module.exports = {
   updateUserErrorMessage,
   listNotFoundErrorMessage,
   noteNotFoundErrorMessage,
+  colorNotFoundErrorMessage, 
 }

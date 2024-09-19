@@ -41,6 +41,9 @@ const updateUserDataValidation = celebrate({
         list: Joi.string().required(),
         color: Joi.string().required(),
     }),
+    params: Joi.object().keys({
+      noteId: Joi.string().required(),
+    }),
   });
 
   const createUserValidation = celebrate({
@@ -57,6 +60,38 @@ const updateUserDataValidation = celebrate({
       password: Joi.string().required(),
     }),
   });
+  
+  const deleteColorValidation = celebrate({
+    params: Joi.object().keys({
+      colorId: Joi.string().required(),
+    }),
+  });
+  
+  const updateColorValidation = celebrate({
+        params: Joi.object().keys({
+      colorId: Joi.string().required(),
+    }),
+    body: Joi.object().keys({
+      color: Joi.string().required(),
+      hex: Joi.string().required(),
+    }),
+  });
+  
+  const createColorValidation = celebrate({
+    body: Joi.object().keys({
+      color: Joi.string().required(),
+      hex: Joi.string().required(),
+    }),
+  });
+  
+  const updateListValidation = ({
+    body: Joi.object().keys({
+      title: Joi.string().required(),
+    }),
+    params: Joi.object().keys({
+      listId: Joi.string().required(),
+    }),
+  });
 
   module.exports = {
     createNoteValidation,
@@ -67,4 +102,8 @@ const updateUserDataValidation = celebrate({
     createUserValidation,
     loginValidation,
     updateNoteDataValidation,
+    deleteColorValidation,
+    updateColorValidation,
+    createColorValidation,
+    updateListValidation,
   }
