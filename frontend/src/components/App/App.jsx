@@ -14,6 +14,7 @@ import ProtectedRoute from "../ProtectedRoute/ProtectedRoute";
 import EditNotePopup from "../EditNotePopup/EditNotePopup";
 import {TextEditorProvider} from "../TextEditor/index.ts";
 import Register from '../Register/Register.jsx';
+import api from '../utils/api';
 
 function App() {
     const [isLoggedIn, setIsLoggedIn] = useState(null);

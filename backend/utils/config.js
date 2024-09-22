@@ -1,10 +1,10 @@
-const mysql = require('mysql2')
+const mysql = require('mysql2');
 
 const dbConnection = mysql.createPool({
   host: 'localhost',
   user: 'root',
   password: 'Fins1234',
-  database: 'notes_db'
+  database: 'notes_db',
 }).promise();
 
 const usersTable = `create table if not exists users(
@@ -16,7 +16,7 @@ const usersTable = `create table if not exists users(
 
 const colorsTable = `create table if not exists colors(
   color_id int auto_increment primary key,
-  color varchar(255) not null,
+  color varchar(255) not null unique,
   hex varchar(255) not null unique
 )`;
 
@@ -47,4 +47,4 @@ dbConnection.query(notesTable);
 
 module.exports = {
   dbConnection,
-}
+};

@@ -32,5 +32,5 @@ module.exports = {
   updateUserErrorMessage,
   listNotFoundErrorMessage,
   noteNotFoundErrorMessage,
-  colorNotFoundErrorMessage, 
-}
+  colorNotFoundErrorMessage,
+};
