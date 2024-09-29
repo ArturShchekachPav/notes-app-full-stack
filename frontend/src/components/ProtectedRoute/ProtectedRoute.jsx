@@ -5,7 +5,7 @@ const ProtectedRoute = ({element, isLoggedIn}) => {
     return (
         isLoggedIn ?
         element :
-        <Navigate to="/sign-in" replace />
+        <Navigate to="/sing-in" replace />
     );
 }
 
