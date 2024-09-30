@@ -1,5 +1,10 @@
 import './Profile.css';
+import {
+    useContext
+} from 'react';
+import ApiError from '../ApiError/ApiError';
 import {useForm} from 'react-hook-form';
+import CurrentUserContext from '../../contexts/CurrentUserContext';
 
 export function Profile({
                             children,
@@ -7,8 +12,15 @@ export function Profile({
                             onSubmit,
                             setIsEditing,
                             logOut,
-                            isLoading
+                            isLoading,
+                            updateStatus
                         }) {
+
+    const {
+        name,
+        email
+    } = useContext(CurrentUserContext);
+
     const {
         register,
         handleSubmit,
@@ -19,8 +31,8 @@ export function Profile({
     } = useForm({
         mode: 'onChange',
         defaultValues: {
-            name: 'Артур',
-            email: 'ashhekach@gmail.com'
+            name: name,
+            email: email
         }
     });
 
@@ -28,7 +40,7 @@ export function Profile({
         <div className="profile">
             {children}
             <main className="profile__main">
-                <h1 className="profile__greeting">Привет, Артур!</h1>
+                <h1 className="profile__greeting">Привет, {name}!</h1>
                 <form
                     className="profile__data-container"
                     name="profile-edit"
@@ -75,6 +87,11 @@ export function Profile({
                         />
                     </div>
                     <div className="profile__buttons">
+                        {!isEditing && <ApiError
+                            message={updateStatus.message}
+                            show={updateStatus.show}
+                            success={updateStatus.success}
+                        />}
                         <button
                             type="button"
                             onClick={() => setIsEditing(true)}
@@ -87,6 +104,10 @@ export function Profile({
                             className={`profile__button ${!isEditing && 'profile__button_active'} profile__button_exit hover_type_button hover`}
                         >Выйти из аккаунта
                         </button>
+                        <ApiError
+                            message={!isValid && 'Некорректное имя или email'}
+                            show={!isValid}
+                        />
                         <button
                             type="submit"
                             className={`profile__button ${isEditing && 'profile__button_active'} profile__button_save hover_type_button hover`}

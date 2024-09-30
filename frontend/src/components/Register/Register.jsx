@@ -1,14 +1,24 @@
 import {
-    Link
+    Link,
+    useNavigate
 } from 'react-router-dom';
 import './Register.css';
+import ApiError from '../ApiError/ApiError';
 import {useForm} from 'react-hook-form';
+import {useState} from 'react';
+import mainApi from '../../utils/MainApi';
 
 function Register({
                       isLoading,
                       setIsLoading,
                       getProfileInfo
                   }) {
+    const [apiError, setApiError] = useState({
+        message: '',
+        show: false
+    });
+
+    const navigate = useNavigate();
 
     const {
         register,
@@ -17,7 +27,8 @@ function Register({
             errors,
             isValid,
             isDirty
-        }
+        },
+        reset
     } = useForm({
         mode: 'onChange',
         defaultValues: {
@@ -26,6 +37,40 @@ function Register({
             password: ''
         }
     });
+
+    function handleRegister({
+                                name,
+                                email,
+                                password
+                            }) {
+        setIsLoading(true);
+
+        return mainApi.register(name,
+            email,
+            password
+        )
+            .then(() => mainApi.login(email,
+                password
+            ))
+            .then(() => getProfileInfo())
+            .then(() => {
+                navigate('/movies',
+                    {replace: true}
+                );
+
+                reset();
+            })
+            .catch(err => {
+                console.log(err);
+                setApiError({
+                    message: err.message,
+                    show: true
+                });
+            })
+            .finally(() => {
+                setIsLoading(false);
+            });
+    }
 
     return (
         <div className="register container">
@@ -40,7 +85,7 @@ function Register({
                 <form
                     className="register__form"
                     name="register"
-                    onSubmit={handleSubmit()}
+                    onSubmit={handleSubmit(handleRegister)}
                     noValidate
                 >
                     <fieldset className="register__fieldset">
@@ -115,6 +160,10 @@ function Register({
                         </label>
                     </fieldset>
                     <div className="register__button-container">
+                        <ApiError
+                            message={apiError.message}
+                            show={apiError.show}
+                        />
                         <button
                             type="submit"
                             className="register__button hover hover_type_button"
