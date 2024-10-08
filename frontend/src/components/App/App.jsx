@@ -188,14 +188,14 @@ function App() {
                     <Route path="/" element={<ProtectedRoute element={<>
                         <Header user={currentUser}/>
                         <main>
-                            <Notes onDeleteNote={handleDeleteNote} onDeleteList={handleDeleteList} onEditList={handleUList  ()} lists={notesLists} notes={notes} onEditNotePopupOpen={onEditNotePopupOpen}/>
+                            <Notes onDeleteNote={handleDeleteNote} onCreateNote={handleCreateNote} onDeleteList={handleDeleteList} onCreateList={handleCreateList} onEditList={handleUpdateList} lists={notesLists} notes={notes} onEditNotePopupOpen={onEditNotePopupOpen}/>
                             {isEditNotePopupOpen &&
                                 <TextEditorProvider html={editingNote.content}>
                                     <EditNotePopup lists={[...notesLists.map((list) => {
-                                        return {value: list.title, label: list.title}
+                                        return {value: list.list, label: list.list}
                                     }), {value: '', label: 'All'}]} colors={notesColors.map((color) => {
-                                        return {label: color.title, value: color.hex}
-                                    })} note={editingNote} onPopupClose={onPopupClose} isPopupOpen={isEditNotePopupOpen}/>
+                                        return {label: color.color, value: color.hex}
+                                    })} note={editingNote} onUpdateNote={handleUpdateNote} onDeleteNote={handleDeleteNote} onPopupClose={onPopupClose} isPopupOpen={isEditNotePopupOpen}/>
                                 </TextEditorProvider>}
                         </main>
                     </>} isLoggedIn={isLoggedIn}/>}/>

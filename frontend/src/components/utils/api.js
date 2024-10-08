@@ -180,12 +180,13 @@ class Api {
             .then(this._checkResponse);
     }
 
-    register(email, password) {
+    register(name, email, password) {
         return fetch(`${this.baseUrl}/signup`,
             {
                 method: 'POST',
                 headers: this.headers,
                 body: JSON.stringify({
+                    name,
                     email,
                     password
                 })

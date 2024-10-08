@@ -5,11 +5,10 @@ import Lists from "../Lists/Lists";
 import Masonry from "react-masonry-css";
 import {useEffect, useState} from "react";
 
-function Notes({notes, lists, onEditNotePopupOpen}) {
+function Notes({notes, lists, onEditNotePopupOpen, onCreateNote, onDeleteNote, onCreateList, onDeleteList, onEditList}) {
     const [selectedList, setSelectedList] = useState({title: null, id: null});
     const [foundNotes, setFoundNotes] = useState(notes);
     const [searchText, setSearchText] = useState('');
-
 
     useEffect(() => {
         let filteredNotes;
@@ -27,17 +26,23 @@ function Notes({notes, lists, onEditNotePopupOpen}) {
         setFoundNotes(filteredNotes);
     }, [selectedList, notes, searchText]);
 
+    const handleCreateNoteButtonClick = () => {
+        return onCreateNote()
+            .then(createdNote => onEditNotePopupOpen(createdNote))
+            .catch(console.log);
+    }
+
     return (
         <section className="notes">
             <Search setSearchText={setSearchText}  />
-            <Lists selectedList={selectedList} setSelectedList={setSelectedList} lists={lists} />
+            <Lists selectedList={selectedList} setSelectedList={setSelectedList} lists={lists} onCreateList={onCreateList} onDeleteList={onDeleteList} onEditList={onEditList}/>
             < Masonry
                 breakpointCols = {2}
                 className = "notes__grid"
                 columnClassName = "notes__grid_column" >
-                {foundNotes.map(note => <Note key={note.id} note={note} onEditNotePopupOpen={onEditNotePopupOpen}/> )}
+                {foundNotes.map(note => <Note key={note.id} note={note} onEditNotePopupOpen={onEditNotePopupOpen} onDeleteNote={onDeleteNote}/> )}
             < / Masonry >
-            <button className="notes__add-button" onClick={() => onEditNotePopupOpen({title: 'Untitled', list: 'All', color: 'blue', content: '<div>Enter the text</div>'})}></button>
+            <button className="notes__add-button" onClick={handleCreateNoteButtonClick}></button>
         </section>
     );
 }

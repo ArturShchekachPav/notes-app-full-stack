@@ -6,7 +6,7 @@ import './Register.css';
 import ApiError from '../ApiError/ApiError';
 import {useForm} from 'react-hook-form';
 import {useState} from 'react';
-import mainApi from '../../utils/MainApi';
+import api from "../utils/api";
 
 function Register({
                       isLoading,
@@ -45,16 +45,16 @@ function Register({
                             }) {
         setIsLoading(true);
 
-        return mainApi.register(name,
+        return api.register(name,
             email,
             password
         )
-            .then(() => mainApi.login(email,
+            .then(({email}) => api.authorize(email,
                 password
             ))
             .then(() => getProfileInfo())
             .then(() => {
-                navigate('/movies',
+                navigate('/',
                     {replace: true}
                 );
 

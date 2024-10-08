@@ -1,0 +1,25 @@
+.api-error {
+    position: absolute;
+    margin: 0 0 65px 0;
+    text-align: center;
+    color: #ff004c;
+    font-family: "Roboto", ‘Arial’, sans-serif;
+    font-size: 11px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    display: none;
+    visibility: hidden;
+    transition: visibility 0.4s linear;
+    width: 100%;
+    bottom: 0;
+}
+
+.api-error_open {
+    display: block;
+    visibility: visible;
+}
+
+.api-error_success {
+    color: #0dd127;
+}

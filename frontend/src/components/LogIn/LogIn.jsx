@@ -4,8 +4,8 @@ import {
 } from 'react-router-dom';
 import ApiError from '../ApiError/ApiError';
 import {useForm} from 'react-hook-form';
-import mainApi from '../../utils/MainApi';
 import {useState} from 'react';
+import api from "../utils/api";
 
 function Login({
                    getProfileInfo,
@@ -41,12 +41,13 @@ function Login({
                                  password
                              }) {
         setIsLoading(true);
-        return mainApi.login(email,
+
+        return api.authorize(email,
             password
         )
             .then(() => getProfileInfo())
             .then(() => {
-                navigate('/movies',
+                navigate('/',
                     {replace: true}
                 );
 
